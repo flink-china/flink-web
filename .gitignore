@@ -1,0 +1,9 @@
+content
+/Gemfile.lock
+/_site
+.DS_Store
+/.bundle
+/.rubydeps
+.idea
+*.iml
+.deploy_git/

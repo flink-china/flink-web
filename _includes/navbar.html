@@ -1,0 +1,85 @@
+  <!-- Top navbar. -->
+    <nav class="navbar navbar-default">
+        <!-- The logo. -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-logo">
+            <a href="{{ site.baseurl }}/">
+              <img alt="Apache Flink" src="{{ site.baseurl }}/img/flink-header-logo.svg" width="147px" height="73px">
+            </a>
+          </div>
+        </div><!-- /.navbar-header -->
+
+        <!-- The navigation links. -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-main">
+
+            <!-- Downloads -->
+            <li class="{% if page.url == '/downloads.html' %}active{% endif %}"><a class="btn btn-info" href="http://flink.apache.org/downloads.html">下载 Flink</a></li>
+
+            <!-- Overview -->
+            <li{% if page.url == '/index.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/index.html">首页</a></li>
+
+            <!-- Intro -->
+            <li{% if page.url == '/introduction.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/introduction.html">Flink 介绍</a></li>
+
+            <!-- Use cases -->
+            <li{% if page.url == '/usecases.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/usecases.html">Flink 用户案例</a></li>
+
+            <!-- Powered by -->
+            <li{% if page.url == '/poweredby.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/poweredby.html">Powered by Flink</a></li>
+
+            <!-- Ecosystem -->
+            <li{% if page.url == '/ecosystem.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/ecosystem.html">生态系统</a></li>
+
+            <!-- Community -->
+            <li{% if page.url == '/community.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/community.html">社区 &amp; 项目</a></li>
+
+            <!-- Contribute -->
+            <li{% if page.url == '/how-to-contribute.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/how-to-contribute.html">如何贡献</a></li>
+
+            
+            <hr />
+
+
+
+            <!-- Documentation -->
+            <li>
+              <a href="{{ site.docs-stable }}" target="_blank">中文文档 <small><span class="glyphicon glyphicon-new-window"></span></small></a>
+            </li> 
+
+            <!-- <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">中文文档
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ site.docs-stable }}" target="_blank">{{site.FLINK_VERSION_STABLE_SHORT}} (Latest stable release) <small><span class="glyphicon glyphicon-new-window"></span></small></a></li>
+                  <li><a href="{{ site.docs-snapshot }}" target="_blank">{{site.FLINK_VERSION_LATEST_SHORT}} (Snapshot) <small><span class="glyphicon glyphicon-new-window"></span></small></a></li>
+                </ul>
+              </li> -->
+
+            <!-- Quickstart -->
+            <li>
+              <a href="{{ site.docs-stable }}/quickstart/setup_quickstart.html" target="_blank">快速起步 <small><span class="glyphicon glyphicon-new-window"></span></small></a>
+            </li>
+
+          </ul>
+
+
+
+          <ul class="nav navbar-nav navbar-bottom">
+          <hr />
+
+            <!-- FAQ -->
+            <li {% if page.url == '/faq.html' %} class="hidden-sm active"{% endif %}><a href="{{ site.baseurl }}/faq.html">常见问题</a></li>
+
+
+            <!-- Visualizer -->
+            <li class="{% if page.url contains '/visualizer/' %} active{% endif %} hidden-md hidden-sm"><a href="{{ site.baseurl }}/visualizer/" target="_blank">Plan Visualizer <small><span class="glyphicon glyphicon-new-window"></span></small></a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
