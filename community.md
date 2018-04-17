@@ -1,160 +1,161 @@
 ---
-title: "Community & Project Info"
+title: "社区和项目"
 ---
 {% toc %}
 
-There are many ways to get help from the Apache Flink community. The [mailing lists](#mailing-lists) are the primary place where all Flink committers are present. If you want to talk with the Flink committers and users in a chat, there is a [IRC channel](#irc). Some committers are also monitoring [Stack Overflow](http://stackoverflow.com/questions/tagged/flink). Please remember to tag your questions with the *[flink](http://stackoverflow.com/questions/tagged/flink)* tag. Bugs and feature requests can either be discussed on *dev mailing list* or on [JIRA]({{ site.jira }}). Those interested in contributing to Flink should check out the [contribution guide](how-to-contribute.html).
+> 译者注: 以下大量的人物名称、会议名称、演讲名称，因属于专用术语，不予翻译。
 
-## Mailing Lists
+我们提供多种方式让参与者可以从Apache Flink社区获得帮助。其中，[邮件组](#邮件组)是当前Flink Committer最主要的沟通方式。如果你想和某个Flink Committer或者用户直接交流，Flink社区提供一个[IRC频道](#IRC频道)可用于沟通。一些Flink Committer同事也活跃在[Stack Overflow](http://stackoverflow.com/questions/tagged/flink)上面。但记住，在Stack Overflow提交问题时候请务必添加*[flink](http://stackoverflow.com/questions/tagged/flink)*的标签。我们建议在*开发邮件组*或者[JIRA]({{ site.jira }})上面讨论有关Bug和Feature的request。最后，所有愿意为Flink贡献的小伙伴们都需要认真阅读[贡献指南](how-to-contribute.html)。
+
+
+## 邮件组
 
 <table class="table table-striped">
   <thead>
-    <th class="text-center">Name</th>
-    <th class="text-center">Subscribe</th>
-    <th class="text-center">Digest</th>
-    <th class="text-center">Unsubscribe</th>
-    <th class="text-center">Post</th>
-    <th class="text-center">Archive</th>
+    <th class="text-center">邮件组名称</th>
+    <th class="text-center">订阅</th>
+    <th class="text-center">摘要</th>
+    <th class="text-center">取消订阅</th>
+    <th class="text-center">发送</th>
+    <th class="text-center">归档</th>
   </thead>
   <tr>
     <td>
       <strong>news</strong>@flink.apache.org<br>
-      <small>News and announcements from the Flink community.</small>
+      <small>Flink社区新闻和公告</small>
     </td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:news-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:news-digest-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:news-unsubscribe@flink.apache.org">Unsubscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <i>Read only list</i></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:news-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:news-digest-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:news-unsubscribe@flink.apache.org">取消订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <i>只读邮件组</i></td>
     <td class="text-center">
-      <a href="http://mail-archives.apache.org/mod_mbox/flink-news/">Archives</a> <br>
+      <a href="http://mail-archives.apache.org/mod_mbox/flink-news/">查看归档</a> <br>
     </td>
   </tr>
   <tr>
     <td>
       <strong>community</strong>@flink.apache.org<br>
-      <small>Broader community discussions related to meetups, conferences, blog posts and job offers.</small>
+      <small>社区讨论，包括meetup、大会、博客、招聘</small>
     </td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:community-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:community-digest-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:community-unsubscribe@flink.apache.org">Unsubscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:community@flink.apache.org">Post</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:community-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:community-digest-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:community-unsubscribe@flink.apache.org">取消订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:community@flink.apache.org">发信</a></td>
     <td class="text-center">
-      <a href="http://mail-archives.apache.org/mod_mbox/flink-community/">Archives</a> <br>
+      <a href="http://mail-archives.apache.org/mod_mbox/flink-community/">查看归档</a> <br>
     </td>
   </tr>
   <tr>
     <td>
       <strong>user</strong>@flink.apache.org<br>
-      <small>User support and questions mailing list</small>
+      <small>用户使用问题讨论</small>
     </td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:user-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:user-digest-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:user-unsubscribe@flink.apache.org">Unsubscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:user@flink.apache.org">Post</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:user-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:user-digest-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:user-unsubscribe@flink.apache.org">取消订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:user@flink.apache.org">发信</a></td>
     <td class="text-center">
-      <a href="http://mail-archives.apache.org/mod_mbox/flink-user/">Archives</a> <br>
-      <a href="http://apache-flink-user-mailing-list-archive.2336050.n4.nabble.com/">Nabble Archive</a>
+      <a href="http://mail-archives.apache.org/mod_mbox/flink-user/">查看归档</a> <br>
+      <a href="http://apache-flink-user-mailing-list-archive.2336050.n4.nabble.com/">Nabble 归档</a>
     </td>
   </tr>
   <tr>
     <td>
       <strong>dev</strong>@flink.apache.org<br>
-      <small>Development related discussions</small>
+      <small>开发问题讨论</small>
     </td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:dev-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:dev-digest-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:dev-unsubscribe@flink.apache.org">Unsubscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:dev@flink.apache.org">Post</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:dev-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:dev-digest-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:dev-unsubscribe@flink.apache.org">取消订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:dev@flink.apache.org">发信</a></td>
     <td class="text-center">
-      <a href="http://mail-archives.apache.org/mod_mbox/flink-dev/">Archives</a> <br>
-      <a href="http://apache-flink-mailing-list-archive.1008284.n3.nabble.com/">Nabble Archive</a>
+      <a href="http://mail-archives.apache.org/mod_mbox/flink-dev/">查看归档</a> <br>
+      <a href="http://apache-flink-mailing-list-archive.1008284.n3.nabble.com/">Nabble 归档</a>
     </td>
   </tr>
   <tr>
     <td>
       <strong>issues</strong>@flink.apache.org
       <br>
-      <small>Mirror of all JIRA activity</small>
+      <small>JIRA Issue的镜像</small>
     </td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:issues-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:issues-digest-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:issues-unsubscribe@flink.apache.org">Unsubscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i><i>Read only list</i></td>
-    <td class="text-center"><a href="http://mail-archives.apache.org/mod_mbox/flink-issues/">Archives</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:issues-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:issues-digest-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:issues-unsubscribe@flink.apache.org">取消订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i><i>只读邮件组</i></td>
+    <td class="text-center"><a href="http://mail-archives.apache.org/mod_mbox/flink-issues/">查看归档</a></td>
   </tr>
   <tr>
     <td>
       <strong>commits</strong>@flink.apache.org
       <br>
-      <small>All commits to our repositories</small>
+      <small>代码仓库提交的记录</small>
     </td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:commits-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:commits-digest-subscribe@flink.apache.org">Subscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:commits-unsubscribe@flink.apache.org">Unsubscribe</a></td>
-    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <i>Read only list</i></td>
-    <td class="text-center"><a href="http://mail-archives.apache.org/mod_mbox/flink-commits/">Archives</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:commits-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:commits-digest-subscribe@flink.apache.org">订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <a href="mailto:commits-unsubscribe@flink.apache.org">取消订阅</a></td>
+    <td class="text-center"><i class="fa fa-pencil-square-o"></i> <i>只读邮件组</i></td>
+    <td class="text-center"><a href="http://mail-archives.apache.org/mod_mbox/flink-commits/">查看归档</a></td>
   </tr>
 </table>
 
-## IRC
+## IRC频道
 
-There is an IRC channel called #flink dedicated to Apache Flink at irc.freenode.org. There is also a [web-based IRC client](http://webchat.freenode.net/?channels=flink) available.
+在irc.freenode.org有个#flink的频道专门用于讨论问题，同时也有一个[Web版本](http://webchat.freenode.net/?channels=flink)的地址。
 
-The IRC channel can be used for online discussions about Apache Flink as community, but developers should be careful to move or duplicate all the official or useful discussions to the issue tracking system or dev mailing list.
+IRC上面非常方便社区在线讨论问题，但开发者需要将一些官方的，或者有价值的讨论粘贴到我们的JIRA或者开发邮件组。
 
-## Stack Overflow
+## StackOverflow问答网站
 
-Committers are watching [Stack Overflow](http://stackoverflow.com/questions/tagged/flink) for the [flink](http://stackoverflow.com/questions/tagged/flink) tag.
+Flink Committers 一直在关注[Stack Overflow](http://stackoverflow.com/questions/tagged/flink)上面有关[flink](http://stackoverflow.com/questions/tagged/flink)的标签。所以请在提问时候务必加上flink的标签。
 
-Make sure to tag your questions there accordingly to get answers from the Flink community.
+## Issue跟进
 
-## Issue Tracker
+Flink社区使用JIRA跟踪所有的代码相关问题 [{{ site.jira }}]({{ site.jira }}).
 
-We use JIRA to track all code related issues: [{{ site.jira }}]({{ site.jira }}).
+所有的Issue也会被镜像通知到我们的issue邮件组.
 
-All issue activity is also mirrored to the issues mailing list.
+## 线下Meetups
 
-## Meetups
+线下Meetup活动已经举办多次，请参看[meetup.com](http://www.meetup.com/topics/apache-flink/)。
 
-There are plenty of meetups on [meetup.com](http://www.meetup.com/topics/apache-flink/) featuring Flink.
+## 代码
 
-## Source Code
-
-### Main source repositories
+### Git地址
 
 - **ASF writable**: [https://git-wip-us.apache.org/repos/asf/flink.git](https://git-wip-us.apache.org/repos/asf/flink.git)
 - **ASF read-only**: git://git.apache.org/flink.git
 - **GitHub mirror**: [https://github.com/apache/flink.git](https://github.com/apache/flink.git)
 
-Note: Flink does not build with Oracle JDK 6. It runs with Oracle JDK 6.
+注意，Flink不基于Oracle JDK 6版本编译，但可以运行在Oracle JDK 6之上。
 
-### Website repositories
+### Web地址
 
 - **ASF writable**: [https://git-wip-us.apache.org/repos/asf/flink-web.git](https://git-wip-us.apache.org/repos/asf/flink-web.git)
 - **ASF read-only**: git://git.apache.org/flink-web.git
 - **GitHub mirror**:  [https://github.com/apache/flink-web.git](https://github.com/apache/flink-web.git)
 
-## Training
+## 培训
 
-[dataArtisans](http://data-artisans.com) currently maintains free Apache Flink training. Their [training website](http://dataartisans.github.io/flink-training) has slides and exercises with solutions. The slides are also available on [SlideShare](http://www.slideshare.net/dataArtisans/presentations).
+[dataArtisans](http://data-artisans.com) 当前负责运营免费的Apache Flink培训，具体参考 [training website](http://dataartisans.github.io/flink-training), 其中包括一些解决方案的Slides和实操。同时，我们把Slides也分享到了[SlideShare](http://www.slideshare.net/dataArtisans/presentations)。
 
-## Project Wiki
+## 项目Wiki
 
-The Apache Flink <a href="https://cwiki.apache.org/confluence/display/FLINK/Apache+Flink+Home" target="_blank">project wiki</a> contains a range of relevant resources for Flink users. However, some content on the wiki might be out-of-date. When in doubt, please refer to the <a href="{{ site.docs-stable }}" target="_blank">Flink documentation</a>.
+Apache Flink <a href="https://cwiki.apache.org/confluence/display/FLINK/Apache+Flink+Home" target="_blank">project wiki</a> 为Flink用户提供了大量的资源可供阅读和学习。值得一提的是，有些文档可能已经过时，若有疑问，请参看<a href="{{ site.docs-stable }}" target="_blank">Flink documentation</a>.
 
-## Flink Forward
+## Flink Forward大会
 
-Flink Forward 2015 (October 12-13, 2015) was the first conference to bring together the Apache Flink developer and user community. You can find [slides and videos](http://2015.flink-forward.org/?post_type=session) of all talks on the Flink Forward 2015 page.
+Flink Forward 2015 (在2015年10月12号至13号举办) 是Apache Flink的开发者和用户第一次大会，你可以在[slides and videos](http://2015.flink-forward.org/?post_type=session)观看有关这次活动所有的演讲。
 
-The second edition of Flink Forward took place on September 12-14, 2016. All [slides and videos](http://flink-forward.org/program/sessions/) are available on the Flink Forward 2016 page.
+第二届 Flink Forward 在2016年9月12号到14号举行，所有的[Slides和视频](http://flink-forward.org/program/sessions/)均已提供。
 
-# People
+# 小伙伴
 
 <table class="table table-striped">
   <thead>
     <th class="text-center"></th>
-    <th class="text-center">Name</th>
-    <th class="text-center">Role</th>
+    <th class="text-center">姓名</th>
+    <th class="text-center">角色</th>
     <th class="text-center">Apache ID</th>
   </thead>
   <tr>
@@ -322,17 +323,18 @@ The second edition of Flink Forward took place on September 12-14, 2016. All [sl
   </tr>
 </table>
 
-You can reach committers directly at `<apache-id>@apache.org`. A list of all contributors can be found [here]({{ site.FLINK_CONTRIBUTORS_URL }}).
+你可以通过`<apache-id>@apache.org`直接和上述Committer联系，所有的Flink贡献者参考这里({{ site.FLINK_CONTRIBUTORS_URL }})。
 
-## Former mentors
 
-The following people were very kind to mentor the project while in incubation.
+## 导师
+
+下面的小伙伴们在Flink项目孵化过程中给予我们很多的帮助，对此表示感谢!
 
 <table class="table table-striped">
   <thead>
     <th class="text-center"></th>
-    <th class="text-center">Name</th>
-    <th class="text-center">Role</th>
+    <th class="text-center">姓名</th>
+    <th class="text-center">角色</th>
     <th class="text-center">Apache ID</th>
   </thead>
   <tr>
@@ -374,9 +376,10 @@ The following people were very kind to mentor the project while in incubation.
   </tr>
 </table>
 
-# Slides
+# Slides幻灯片
 
-**Note**: Keep in mind that code examples on slides have a chance of being incomplete or outdated. Always refer to the [latest documentation]({{ site.docs-snapshot }}) for an up to date reference.
+
+**注意**: 在slides中的代码都可能由于Flink快速进化而过时，请访问[最新文档]({{ site.docs-snapshot }})获取最新的Flink资讯。
 
 ### 2016
 
@@ -435,21 +438,21 @@ The following people were very kind to mentor the project while in incubation.
 - Marton Balassi & Gyula Fóra: **The Flink Big Data Analytics Platform** *(ApachecCon, November 11th, 2014)*: [SlideShare](http://www.slideshare.net/GyulaFra/flink-apachecon)
 - Till Rohrmann: **Introduction to Apache Flink** *(October 15th, 2014)*: [SlideShare](http://www.slideshare.net/tillrohrmann/introduction-to-apache-flink)
 
-# Materials
+# 宣传材料
 
-## Apache Flink Logos
+## Flink Logo
 
-We provide the Apache Flink logo in different sizes and formats. You can [download all variants]({{ site.baseurl }}/img/logo.zip) (7.7 MB) or just pick the one you need from this page.
+我们为Apache Flink提供不同尺寸和格式的Logo，点击[全套Logo]({{ site.baseurl }}/img/logo.zip) (7.7 MB) 或者 选择下面你需要的图片.
 
-### Portable Network Graphics (PNG)
+### PNG格式
 
 <div class="row text-center">
   <div class="col-sm-4">
-    <h4>Colored logo</h4>
+    <h4>彩色Logo</h4>
 
     <p><img src="{{ site.baseurl }}/img/logo/png/200/flink_squirrel_200_color.png" alt="Apache Flink Logo" title="Apache Flink Logo" width="200px" /></p>
 
-    <p markdown="1">**Sizes (px)**:
+    <p markdown="1">**尺寸(px)**:
       [50x50]({{ site.baseurl }}/img/logo/png/50/color_50.png),
       [100x100]({{ site.baseurl }}/img/logo/png/100/flink_squirrel_100_color.png),
       [200x200]({{ site.baseurl }}/img/logo/png/200/flink_squirrel_200_color.png),
@@ -458,11 +461,11 @@ We provide the Apache Flink logo in different sizes and formats. You can [downlo
   </div>
 
   <div class="col-sm-4">
-    <h4>White filled logo</h4>
+    <h4>黑底白字Logo</h4>
 
     <p><img src="{{ site.baseurl }}/img/logo/png/200/flink_squirrel_200_white.png" alt="Apache Flink Logo" title="Apache Flink Logo" width="200px" style="background:black;" /></p>
 
-    <p markdown="1">**Sizes (px)**:
+    <p markdown="1">**尺寸(px)**:
       [50x50]({{ site.baseurl }}/img/logo/png/50/white_50.png),
       [100x100]({{ site.baseurl }}/img/logo/png/100/flink_squirrel_100_white.png),
       [200x200]({{ site.baseurl }}/img/logo/png/200/flink_squirrel_200_white.png),
@@ -471,11 +474,11 @@ We provide the Apache Flink logo in different sizes and formats. You can [downlo
   </div>
 
   <div class="col-sm-4">
-    <h4>Black outline logo</h4>
+    <h4>白底黑字Logo</h4>
 
     <p><img src="{{ site.baseurl }}/img/logo/png/200/flink_squirrel_200_black.png" alt="Apache Flink Logo" title="Apache Flink Logo" width="200px" /></p>
 
-    <p markdown="1">**Sizes (px)**:
+    <p markdown="1">**尺寸(px)**:
       [50x50]({{ site.baseurl }}/img/logo/png/50/black_50.png),
       [100x100]({{ site.baseurl }}/img/logo/png/100/flink_squirrel_100_black.png),
       [200x200]({{ site.baseurl }}/img/logo/png/200/flink_squirrel_200_black.png),
@@ -486,29 +489,29 @@ We provide the Apache Flink logo in different sizes and formats. You can [downlo
 
 <div class="panel panel-default">
   <div class="panel-body" markdown="span">
-    You can find more variants of the logo [in this directory]({{ site.baseurl }}/img/logo/png) or [download all variants]({{ site.baseurl }}/img/logo.zip) (7.7 MB).
+    在这里更多Logo类型: [点击查看]({{ site.baseurl }}/img/logo/png) or [点击下载]({{ site.baseurl }}/img/logo.zip) (7.7 MB).
   </div>
 </div>
 
-### Scalable Vector Graphics (SVG)
+### SVG格式
 
 <div class="row text-center img100">
   <div class="col-sm-4 text-center">
-    <h4>Colored logo</h4>
+    <h4>彩色Logo</h4>
 
     <p><img src="{{ site.baseurl }}/img/logo/svg/color_black.svg" alt="Apache Flink Logo" title="Apache Flink Logo" /></p>
 
     <p markdown="1">Colored logo with black text ([color_black.svg]({{ site.baseurl }}/img/logo/svg/color_black.svg))</p>
   </div>
   <div class="col-sm-4">
-    <h4>White filled logo</h4>
+    <h4>黑底白字Logo</h4>
 
     <p><img src="{{ site.baseurl }}/img/logo/svg/white_filled.svg" alt="Apache Flink Logo" title="Apache Flink Logo" style="background:black;" /></p>
 
     <p markdown="1">White filled logo ([white_filled.svg]({{ site.baseurl }}/img/logo/svg/white_filled.svg))</p>
   </div>
   <div class="col-sm-4">
-    <h4>Black outline logo</h4>
+    <h4>白底黑字Logo</h4>
 
     <p><img src="{{ site.baseurl }}/img/logo/svg/black_outline.svg" alt="Apache Flink Logo" title="Apache Flink Logo" /></p>
 
@@ -518,26 +521,26 @@ We provide the Apache Flink logo in different sizes and formats. You can [downlo
 
 <div class="panel panel-default">
   <div class="panel-body" markdown="span">
-    You can find more variants of the logo [in this directory]({{ site.baseurl }}/img/logo/svg) or [download all variants]({{ site.baseurl }}/img/logo.zip) (7.7 MB).
+    在这里提供更多Logo，[点击查看]({{ site.baseurl }}/img/logo/svg) or [下载所有版本]({{ site.baseurl }}/img/logo.zip) (7.7 MB).
   </div>
 </div>
 
-### Photoshop (PSD)
+### PSD格式
 
 <div class="panel panel-default">
   <div class="panel-body" markdown="1">
-You can download the logo in PSD format as well:
 
-- **Colored logo**: [1000x1000]({{ site.baseurl }}/img/logo/psd/flink_squirrel_1000.psd).
-- **Black outline logo with text**: [1000x1000]({{ site.baseurl }}/img/logo/psd/flink_1000.psd), [5000x5000]({{ site.baseurl }}/img/logo/psd/flink_5000.psd).
+下载PSD格式:
+- **彩色Logo**: [1000x1000]({{ site.baseurl }}/img/logo/psd/flink_squirrel_1000.psd).
+- **白底黑字Logo**: [1000x1000]({{ site.baseurl }}/img/logo/psd/flink_1000.psd), [5000x5000]({{ site.baseurl }}/img/logo/psd/flink_5000.psd).
 
-You can find more variants of the logo [in this directory]({{ site.baseurl }}/img/logo/psd) or [download all variants]({{ site.baseurl }}/img/logo.zip) (7.7 MB).
+在这里提供更多Logo，[点击查看]({{ site.baseurl }}/img/logo/psd) or [下载所有版本]({{ site.baseurl }}/img/logo.zip) (7.7 MB).
 </div>
 </div>
 
-## Color Scheme
+## 颜色主题
 
-You can use the provided color scheme which incorporates some colors of the Flink logo:
+你也可以选择搭配使用Flink Logo的部分颜色:
 
-- [PDF color scheme]({{ site.baseurl }}/img/logo/colors/flink_colors.pdf)
-- [Powerpoint color scheme]({{ site.baseurl }}/img/logo/colors/flink_colors.pptx)
+- [颜色主题PDF]({{ site.baseurl }}/img/logo/colors/flink_colors.pdf)
+- [颜色主题PPT]({{ site.baseurl }}/img/logo/colors/flink_colors.pptx)
