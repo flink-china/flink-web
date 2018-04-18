@@ -1,5 +1,5 @@
 ---
-title: "Frequently Asked Questions (FAQ)"
+title: "常见问题(FAQ)"
 ---
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
@@ -20,7 +20,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-The following questions are frequently asked with regard to the Flink project **in general**. If you have further questions, make sure to consult the [documentation]() or [ask the community]().
+以下是关于Flink项目的常见问题。如果你还有其他问题，可以[参阅文档](http://flink-china.org/faq.html)或询问[社区](http://flink-china.org/faq.html)。
 
 {% toc %}
 
@@ -28,115 +28,68 @@ The following questions are frequently asked with regard to the Flink project **
 
 
 
-## General
+## 综述
 
-### Is Flink a Hadoop Project?
+### Flink是一个Hadoop项目吗？
 
-Flink is a data processing system and an **alternative to Hadoop's
-MapReduce component**. It comes with its *own runtime* rather than building on top
-of MapReduce. As such, it can work completely independently of the Hadoop
-ecosystem. However, Flink can also access Hadoop's distributed file
-system (HDFS) to read and write data, and Hadoop's next-generation resource
-manager (YARN) to provision cluster resources. Since most Flink users are
-using Hadoop HDFS to store their data, Flink already ships the required libraries to
-access HDFS.
+Flink是一个数据处理系统，是**Hadoop的MapReduce组件的替代品**。它有自己运行环境，而不是建立在MapReduce上。因此，它可以完全独立于Hadoop生态系统。尽管如此，Flink依然可以接入Hadoop的分布式文件系统(HDFS)来读取和写入数据，也可以使用Hadoop下一代资源调度系统（YARN）提供集群资源调度。由于绝大多数Flink用户都使用Hadoop HDFS来存储数据，Flink已经将所需的库接入到HDFS上。
 
-### Do I have to install Apache Hadoop to use Flink?
+### 我需要安装Apache Hadoop来使用Flink吗?
 
-**No**. Flink can run **without** a Hadoop installation. However, a *very common*
-setup is to use Flink to analyze data stored in the Hadoop Distributed
-File System (HDFS). To make these setups work out of the box, Flink bundles the
-Hadoop client libraries by default.
-
-Additionally, we provide a special YARN Enabled download of Flink for
-users with an existing Hadoop YARN cluster. [Apache Hadoop
+**不是**。Flink可以在**没有**Hadoop的环境下运行。然而，通常的设置是使用Flink分析存储在Hadoop Distributed File System（HDFS）上的数据。为了使这些设置能够正常工作，Flink在默认情况下集成了Hadoop客户端。
+此外，我们为现有的Hadoop YARN集群提供了特别的YARN Flink下载版本。 [Apache Hadoop
 YARN](http://hadoop.apache.org/docs/r2.2.0/hadoop-yarn/hadoop-yarn-site/YARN.html)
-is Hadoop's cluster resource manager that allows use of
-different execution engines next to each other on a cluster.
+是Hadoop的集群资源管理器，它允许在集群上使用不同的执行引擎。
 
-## Usage
+## 用法
 
-### How do I assess the progress of a Flink program?
+### 如何评估Flink计划的进展？
 
-There are a multiple of ways to track the progress of a Flink program:
+有多种方法可以跟踪Flink计划的进展情况：
 
-- The JobManager (the master of the distributed system) starts a web interface
-to observe program execution. In runs on port 8081 by default (configured in
-`conf/flink-config.yml`).
-- When you start a program from the command line, it will print the status
-changes of all operators as the program progresses through the operations.
-- All status changes are also logged to the JobManager's log file.
+- JobManager（分布式系统的主设备）启动Web界面以观察程序执行。 在默认情况下在端口8081上运行（在conf / flink-config.yml中配置）。
+- 从命令行启动程序时，随着程序在操作中的进展，它将打印所有操作员的状态更改。
+- 所有状态更改也会记录到JobManager的日志文件中。
 
-### How can I figure out why a program failed?
+### 怎样才能找出程序失败的原因？
 
-- The JobManager web frontend (by default on port 8081) displays the exceptions
-of failed tasks.
-- If you run the program from the command-line, task exceptions are printed to
-the standard error stream and shown on the console.
-- Both the command line and the web interface allow you to figure out which
-parallel task first failed and caused the other tasks to cancel the execution.
-- Failing tasks and the corresponding exceptions are reported in the log files
-of the master and the worker where the exception occurred
-(`log/flink-<user>-jobmanager-<host>.log` and
-`log/flink-<user>-taskmanager-<host>.log`).
+- JobManager Web前端（默认情况下在端口8081上）显示失败任务的例外情况。
+- 如果从命令行运行程序，任务例外将打印到标准错误流并显示在控制台上。
+- 通过命令行和Web界面，您可以确定哪个并行任务首先失败，并导致其他任务取消执行。
+- 发生异常的主服务器和工作服务器的日志文件(`log/flink-<user>-jobmanager-<host>.log` 和`log/flink-<user>-taskmanager-<host>.log`).
 
-### How do I debug Flink programs?
+### 如何调试Flink程序？
 
-- When you start a program locally with the [LocalExecutor]({{site.docs-snapshot}}/apis/local_execution.html),
-you can place breakpoints in your functions and debug them like normal
-Java/Scala programs.
-- The [Accumulators]({{ site.docs-snapshot }}/apis/programming_guide.html#accumulators--counters) are very helpful in
-tracking the behavior of the parallel execution. They allow you to gather
-information inside the program's operations and show them after the program
-execution.
+- 当您使用[LocalExecutor]({{site.docs-snapshot}}/apis/local_execution.html)在本地启动程序时，可以在函数中放置断点并像普通的Java / Scala程序一样调试它们。
+- [Accumulators]({{ site.docs-snapshot }}/apis/programming_guide.html#accumulators--counters) 在跟踪并行执行的行为方面非常有用。它们允许您收集程序操作中的信息并在程序执行后显示它们。
 
-### What is the parallelism? How do I set it?
+### 平行度是什么？如何设置它？
 
-In Flink programs, the parallelism determines how operations are split into
-individual tasks which are assigned to task slots. Each node in a cluster has at
-least one task slot. The total number of task slots is the number of all task slots
-on all machines. If the parallelism is set to `N`, Flink tries to divide an
-operation into `N` parallel tasks which can be computed concurrently using the
-available task slots. The number of task slots should be equal to the
-parallelism to ensure that all tasks can be computed in a task slot concurrently.
+在Flink程序中，并行性决定了操作如何分解为分配给任务槽的单个任务。 群集中的每个节点至少有一个任务槽。 任务槽的总数是所有机器上所有任务槽的数量。 如果并行性设置为`N`, 则Flink会尝试将操作划分为 `N` 个并行任务，这些任务可以使用可用任务槽同时计算。 任务槽的数量应该等于并行度，以确保所有任务可以同时在一个任务槽中计算。
 
-**Note**: Not all operations can be divided into multiple tasks. For example, a
-`GroupReduce` operation without a grouping has to be performed with a
-parallelism of 1 because the entire group needs to be present at exactly one
-node to perform the reduce operation. Flink will determine whether the
-parallelism has to be 1 and set it accordingly.
+注意: 并非所有操作都可以分为多个任务。 例如，没有分组的
+`GroupReduce` 操作必须以1的并行性执行，因为整个组需要存在于恰好一个节点以执行减少操作。link将确定并行性是否为1并相应地设置它。
+并行性可以通过多种方式进行设置，以确保对Flink程序的执行进行精细控制。 有关如何设置并行性的详细说明，请参阅查阅 [配置指南]({{ site.docs-snapshot }}/setup/config.html#common-options) 。 另外请查看 [this figure]({{ site.docs-snapshot }}/setup/config.html#configuring-taskmanager-processing-slots) 详细说明处理插槽和并行性是如何相互关联的。
 
-The parallelism can be set in numerous ways to ensure a fine-grained control
-over the execution of a Flink program. See
-the [Configuration guide]({{ site.docs-snapshot }}/setup/config.html#common-options) for detailed instructions on how to
-set the parallelism. Also check out [this figure]({{ site.docs-snapshot }}/setup/config.html#configuring-taskmanager-processing-slots) detailing
-how the processing slots and parallelism are related to each other.
+## 错误
 
-## Errors
+### 为什么我会收到“NonSerializableException”？
 
-### Why am I getting a "NonSerializableException" ?
+Flink中的所有函数必须是序列化的，这是由 [java.io.Serializable](http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html)定义的。.
+由于所有的程序接口都是可序列化的，异常意味着您的函数中使用的一个域不是可序列化的。
 
-All functions in Flink must be serializable, as defined by [java.io.Serializable](http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html).
-Since all function interfaces are serializable, the exception means that one
-of the fields used in your function is not serializable.
 
-In particular, if your function is an inner class, or anonymous inner class,
-it contains a hidden reference to the enclosing class (usually called `this$0`, if you look
-at the function in the debugger). If the enclosing class is not serializable, this is probably
-the source of the error. Solutions are to
+特别地，如果你的函数是一个内部类，或者匿名内部类，它包含一个隐藏的对封闭类的引用。（通常叫做this$0，如果你看一下调试器中的函数）如果封闭类不是可序列化的，   那么这可能就是错误的根源。解决方案：
 
-- make the function a standalone class, or a static inner class (no more reference to the enclosing class)
-- make the enclosing class serializable
-- use a Java 8 lambda function.
+- 使该函数成为一个独立的类，或者一个静态内部类（不再引用封闭类）
+- 使封闭类可串行化
+- 使用Java 8 lambda函数
 
-### In Scala API, I get an error about implicit values and evidence parameters
+### 在Scala API中，我收到了关于隐式值和证据参数的报错
 
-It means that the implicit value for the type information could not be provided.
-Make sure that you have an `import org.apache.flink.api.scala._` statement in your code.
+这意味着不能提供类型信息的隐式值。确保在你的代码中有 `import org.apache.flink.api.scala._` 的声明.
 
-If you are using flink operations inside functions or classes that take
-generic parameters a TypeInformation must be available for that parameter.
-This can be achieved by using a context bound:
+如果你在使用通用参数的函数或类中使用Flink操作，那么必须为该参数提供类型定义。可以通过上下文邦定来实现：
 
 ~~~scala
 def myFunction[T: TypeInformation](input: DataSet[T]): DataSet[Seq[T]] = {
@@ -144,24 +97,20 @@ def myFunction[T: TypeInformation](input: DataSet[T]): DataSet[Seq[T]] = {
 }
 ~~~
 
-See [Type Extraction and Serialization]({{ site.docs-snapshot }}/internals/types_serialization.html) for
-an in-depth discussion of how Flink handles types.
+参阅 [类型提取和序列化]({{ site.docs-snapshot }}/internals/types_serialization.html) 了解关于Flink如何处理类型的深入讨论。
 
-### I get an error message saying that not enough buffers are available. How do I fix this?
+### 我收到一条错误消息，说没有足够的缓冲区可用。我怎么解决这个问题？
 
-If you run Flink in a massively parallel setting (100+ parallel threads),
-you need to adapt the number of network buffers via the config parameter
+ 如果您在一个大规模并发环境（100多个并行线程）中运行Flink，您需要通过配置参数
 `taskmanager.network.numberOfBuffers`.
-As a rule-of-thumb, the number of buffers should be at least
-`4 * numberOfTaskManagers * numberOfSlotsPerTaskManager^2`. See
-[Configuration Reference]({{ site.docs-snapshot }}/setup/config.html#configuring-the-network-buffers) for details.
+调整网络缓冲区的数量。根据经验法则，缓冲区的数量应该是最少的
+`4 * numberOfTaskManagers * numberOfSlotsPerTaskManager^2`. 查阅
+[Configuration Reference]({{ site.docs-snapshot }}/setup/config.html#configuring-the-network-buffers) 获取更多细节.
 
-### My job fails early with a java.io.EOFException. What could be the cause?
+### 我的作业在早期就因java.io.EOF异常失败。可能的原因是什么？
 
-The most common case for these exception is when Flink is set up with the
-wrong HDFS version. Because different HDFS versions are often not compatible
-with each other, the connection between the filesystem master and the client
-breaks.
+对于这些异常，最常见的情况是当Flink设置时对应错了HDFS的版本。不同版本的HDFS经常不兼容，导致文件系统主服务器和客户机之间的连接中断。
+
 
 ~~~bash
 Call to <host:port> failed on local exception: java.io.EOFException
@@ -177,18 +126,12 @@ Call to <host:port> failed on local exception: java.io.EOFException
     at org.apache.flinkruntime.fs.hdfs.DistributedFileSystem.initialize(DistributedFileSystem.java:276
 ~~~
 
-Please refer to the [download page]({{ site.baseurl }}/downloads.html#maven) and
-the {% github README.md master "build instructions" %}
-for details on how to set up Flink for different Hadoop and HDFS versions.
+有关如何为不同的Hadoop和HDFS版本设置Flink的详细信息，请参考 [下载页面]({{ site.baseurl }}/downloads.html#maven) 和 {% github README.md master "构建说明" %}
 
+### 我的作业因为HDFS/Hadoop代码的各种异常失败。我能做什么?
 
-### My job fails with various exceptions from the HDFS/Hadoop code. What can I do?
+默认情况下，Flink将附带Hadoop 2.2版本的二进制文件。这些二进制文件用于连接HDFS或YARN。HDFS客户端似乎有一些bug，在写入HDFS时（特别是在高负载下）会导致异常。以下是异常的情况：
 
-Flink is shipping with the Hadoop 2.2 binaries by default. These binaries are used
-to connect to HDFS or YARN.
-It seems that there are some bugs in the HDFS client which cause exceptions while writing to HDFS
-(in particular under high load).
-Among the exceptions are the following:
 
 - `HDFS client trying to connect to the standby Namenode "org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.StandbyException): Operation category READ is not supported in state standby"`
 - `java.io.IOException: Bad response ERROR for block BP-1335380477-172.22.5.37-1424696786673:blk_1107843111_34301064 from datanode 172.22.5.81:50010
@@ -199,114 +142,76 @@ Among the exceptions are the following:
         at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.updatePipelineInternal(FSNamesystem.java:6039)
         at org.apache.hadoop.hdfs.server.namenode.FSNamesystem.updatePipeline(FSNamesystem.java:6002)`
 
-If you are experiencing any of these, we recommend using a Flink build with a Hadoop version matching
-your local HDFS version.
-You can also manually build Flink against the exact Hadoop version (for example
-when using a Hadoop distribution with a custom patch level)
+如果您经历了以上任何一种，我们建议使用一个与您的本地HDFS版本相匹配的Hadoop版本的Flink构建。您还可以根据Hadoop版本（例如使用自定义补丁级别的Hadoop）手动构建Flink。
 
-### In Eclipse, I get compilation errors in the Scala projects
 
-Flink uses a new feature of the Scala compiler (called "quasiquotes") that have not yet been properly
-integrated with the Eclipse Scala plugin. In order to make this feature available in Eclipse, you
-need to manually configure the *flink-scala* project to use a *compiler plugin*:
+### Eclipse开发中，Scala项目中的编译错误
 
-- Right click on *flink-scala* and choose "Properties"
-- Select "Scala Compiler" and click on the "Advanced" tab. (If you do not have that, you probably have not set up Eclipse for Scala properly.)
-- Check the box "Use Project Settings"
-- In the field "Xplugin", put the path "/home/<user-name>/.m2/repository/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.jar"
-- NOTE: You have to build Flink with Maven on the command line first, to make sure the plugin is downloaded.
+Flink使用了Scala编译器的一个新特性（称为“准引号”），它还没有与Eclipse Scala插件进行很好的集成。为了使这个特性在Eclipse中可用，您需要手动配置Flink-Scala项目来使用编译器插件：
 
-### My program does not compute the correct result. Why are my custom key types
-are not grouped/joined correctly?
 
-Keys must correctly implement the methods `java.lang.Object#hashCode()`,
-`java.lang.Object#equals(Object o)`, and `java.util.Comparable#compareTo(...)`.
-These methods are always backed with default implementations which are usually
-inadequate. Therefore, all keys must override `hashCode()` and `equals(Object o)`.
+- 右键点击“Flink-Scala”并选择“属性”；
+- 选择 "Scala Compiler" 并点击 "Advanced" 选项卡. 如果没有，您可能没有为Scala设置合适的Eclipse）
+- 检查框“"Use Project Settings"
+- 在 "Xplugin"字段中, 将路径 "/home/<user-name>/.m2/repository/org/scalamacros/paradise_2.10.4/2.0.1/paradise_2.10.4-2.0.1.jar"
+  注意：您必须首先在命令行上与Maven构建Flink，以确保插件被下载。
 
-### I get a java.lang.InstantiationException for my data type, what is wrong?
+### 我的程序没有计算出正确的结果。为什么我自定义keys没有被正确地grouped/joined？
 
-All data type classes must be public and have a public nullary constructor
-(constructor with no arguments). Further more, the classes must not be abstract
-or interfaces. If the classes are internal classes, they must be public and
-static.
 
-### I can't stop Flink with the provided stop-scripts. What can I do?
+  Keys必须正确地实现 `java.lang.Object#hashCode()`,
+`java.lang.Object#equals(Object o)`, 和 `java.util.Comparable#compareTo(...)`.
+这些方法总是支持默认的实现，而这些实现通常是不充分的。因此，所有的键必须覆盖`hashCode()`和`equals(Object o)`。
 
-Stopping the processes sometimes takes a few seconds, because the shutdown may
-do some cleanup work.
+### 我的数据类型发生java.lang.Instantiation异常，哪里出错了？
 
-In some error cases it happens that the JobManager or TaskManager cannot be
-stopped with the provided stop-scripts (`bin/stop-local.sh` or `bin/stop-
-cluster.sh`). You can kill their processes on Linux/Mac as follows:
+所有的数据类型类都必须是公有的，并且有一个公共的nullary构造函数（没有参数的构造函数）。此外，类不能是抽象的或接口。如果类是内部类，它们必须是公有的和静态的。
 
-- Determine the process id (pid) of the JobManager / TaskManager process. You
-can use the `jps` command on Linux(if you have OpenJDK installed) or command
-`ps -ef | grep java` to find all Java processes.
-- Kill the process with `kill -9 <pid>`, where `pid` is the process id of the
-affected JobManager or TaskManager process.
 
-On Windows, the TaskManager shows a table of all processes and allows you to
-destroy a process by right its entry.
+### 我用停止脚本停不掉Flink，怎么办？
 
-Both the JobManager and TaskManager services will write signals (like SIGKILL
-and SIGTERM) into their respective log files. This can be helpful for 
-debugging issues with the stopping behavior.
+停止进程有时需要几秒钟，因为停止可能会进行一些清理工作。
+在一些错误情况下用提供的停止脚本(`bin/stop-local.sh` or `bin/stop-
+cluster.sh`)停不掉作业管理器或者任务管理器。你可以在linux/mac上kill它们的进程：
 
-### I got an OutOfMemoryException. What can I do?
+- 确定作业管理器或者任务管理器进程的进程id（pid），你可以在Linux上用 `jps`命令（如果OpenSDK已经安装）或者`ps -ef | grep java`命令找到所有的java进程。
 
-These exceptions occur usually when the functions in the program consume a lot
-of memory by collection large numbers of objects, for example in lists or maps.
-The OutOfMemoryExceptions in Java are kind of tricky. The exception is not
-necessarily thrown by the component that allocated most of the memory but by the
-component that tried to requested the latest bit of memory that could not be
-provided.
+- 用`kill -9 <pid>`命令结束掉受影响的JobManager或者TaskManager的`pid`。
+在Windows系统上，任务管理器列出了所有进程的表，并允许您通过他的入口来销毁进程。
 
-There are two ways to go about this:
+在Windows系统上，任务管理器列出了所有进程的表，并允许您通过他的入口来销毁进程。
 
-1. See whether you can use less memory inside the functions. For example, use
-arrays of primitive types instead of object types.
+作业管理器和任务管理器服务都将把信号（如SIGKILL和SIGTERM）写入各自的日志文件中。这对于调试停止问题很有帮助
 
-2. Reduce the memory that Flink reserves for its own processing. The
-TaskManager reserves a certain portion of the available memory for sorting,
-hashing, caching, network buffering, etc. That part of the memory is unavailable
-to the user-defined functions. By reserving it, the system can guarantee to not
-run out of memory on large inputs, but to plan with the available memory and
-destage operations to disk, if necessary. By default, the system reserves around
-70% of the memory. If you frequently run applications that need more memory in
-the user-defined functions, you can reduce that value using the configuration
-entries `taskmanager.memory.fraction` or `taskmanager.memory.size`. See the
-[Configuration Reference]({{ site.docs-snapshot }}/setup/config.html) for details. This will leave more memory to JVM heap,
-but may cause data processing tasks to go to disk more often.
+### 我收到了OutOfMemory异常，该怎么处理？
 
-Another reason for OutOfMemoryExceptions is the use of the wrong state backend.
-By default, Flink is using a heap-based state backend for operator state in
-streaming jobs. The `RocksDBStateBackend` allows state sizes larger than the
-available heap space.
+这些异常通常发生在程序中的函数消耗大量内存来收集对象，例如列表或图表。Java中的OutOfMemory异常有点棘手。这个异常并不一定是由分配了太多内存组件引起，而是由组件试图响应的最新的内存无法得到释放。
 
-### Why do the TaskManager log files become so huge?
+有两种解决方法：
 
-Check the logging behavior of your jobs. Emitting logging per object or tuple may be
-helpful to debug jobs in small setups with tiny data sets but can limit performance
-and consume substantial disk space if used for large input data.
+1. 您是否可以在函数中使用更少的内存。例如，使用原始类型的数组而不是对象类型。
 
-### The slot allocated for my task manager has been released. What should I do?
+2. 减少Flink为其自身处理而保留的内存。任务管理器保留了可用内存的一部分，用于排序、散列、缓存、网络缓冲等。用户定义函数无法访问该部分内存。通过保留它，系统可以保证在大量输入不会耗尽内存，但是如果需要，可以使用可用内存和destage操作来进行划分。默认情况下，系统会保留大约70%的内存。如果您经常在udf中运行需要更多内存的应用程序，您可以使用`taskmanager.memory.fraction` 或者`taskmanager.memory.size`来减少该值。参阅[Configuration Reference]({{ site.docs-snapshot }}/setup/config.html)获取更多细节。这将为JVM堆留下更多内存，但可能会导致数据处理任务更频繁地进入磁盘。
 
-If you see a `java.lang.Exception: The slot in which the task was executed has been released. Probably loss of TaskManager` even though the TaskManager did actually not crash, it 
-means that the TaskManager was unresponsive for a time. That can be due to network issues, but is frequently due to long garbage collection stalls.
-In this case, a quick fix would be to use an incremental Garbage Collector, like the G1 garbage collector. It usually leads to shorter pauses. Furthermore, you can dedicate more memory to
-the user code by reducing the amount of memory Flink grabs for its internal operations (see configuration of TaskManager managed memory).
+ OutOfMemoryExceptions的另一个原因是使用了错误的状态后端。默认情况下，Flink在流作业中使用基于堆的状态后端。RocksDBStateBackend允许状态尺寸大于可获得的堆空间。
 
-If both of these approaches fail and the error persists, simply increase the TaskManager's heartbeat pause by setting AKKA_WATCH_HEARTBEAT_PAUSE (akka.watch.heartbeat.pause) to a greater value (e.g. 600s).
-This will cause the JobManager to wait for a heartbeat for a longer time interval before considering the TaskManager lost.
+### 任务管理器的日志文件为什么变得如此巨大？
 
-## YARN Deployment
+检查您的作业的日志记录行为。每个对象或元组的日志记录可能有助于在小的数据集安装中来调试作业，但是如果用于大的输入数据会限制性能并消耗大量的磁盘空间。
+分配给我的任务管理器的槽已经被释放了。我应该做什么?
 
-### The YARN session runs only for a few seconds
+### 分配给我的任务管理器的槽已经被释放了。我应该做什么?
 
-The `./bin/yarn-session.sh` script is intended to run while the YARN-session is
-open. In some error cases however, the script immediately stops running. The
-output looks like this:
+
+如果你看到java.lang.Exception: The slot in which the task was executed has been released. Probably loss of TaskManager 异常，即使任务管理器没有崩溃，它意味着任务管理器已经有一段时间没有响应。这可能是由于网络问题造成的，但通常是由于长期的垃圾收集摊位。在这种情况下，快速解决方案将是使用增量垃圾收集器，如G1垃圾收集器。它通常会带来更短的暂停。此外，您可以通过减少对其内部操作的内存占用（参见任务管理器托管内存的配置）来为用户代码提供更多的内存。
+
+如果这两种方法都失败了，并且错误仍然存在，只需通过设置AKKA_WATCH_HEARTBEAT_PAUSE (akka.watch.heartbeat.pause)到更大的值（例如600秒），就可以增加TaskManager的脉搏暂停。这将导致作业管理器在考虑丢失之前等待一个更长的时间间隔。
+
+## YARN开发
+
+### YARN会话只持续了数秒
+
+./bin/yarn-session.sh脚本在YARN会话开始时运行。在一些错误情况下，脚本立即停止执行。类似结果如下：
 
 ~~~
 07:34:27,004 INFO  org.apache.hadoop.yarn.client.api.impl.YarnClientImpl         - Submitted application application_1395604279745_273123 to ResourceManager at jobtracker-host
@@ -319,45 +224,36 @@ JobManager Web Interface: http://jobtracker-host:54311/proxy/application_1295604
 07:34:51,559 INFO  org.apache.flinkyarn.Client                                   - YARN Client is shutting down
 ~~~
 
-The problem here is that the Application Master (AM) is stopping and the YARN client assumes that the application has finished.
+这里的问题是ApplicationMaster（AM）停止了，而YARN客户端却认为AM已经完成。
 
-There are three possible reasons for that behavior:
+这种情况有三种可能的原因：
 
-- The ApplicationMaster exited with an exception. To debug that error, have a
-look in the logfiles of the container. The `yarn-site.xml` file contains the
-configured path. The key for the path is `yarn.nodemanager.log-dirs`, the
-default value is `${yarn.log.dir}/userlogs`.
+- AM由于异常而退出。调试异常要查看容器的日志文件。yarn-site.xml文件包含已配置的路径。路径的key值为yarn.nodemanager.log-dirs，缺省值是${yarn.log.dir}/userlogs
 
-- YARN has killed the container that runs the ApplicationMaster. This case
-happens when the AM used too much memory or other resources beyond YARN's
-limits. In this case, you'll find error messages in the nodemanager logs on
-the host.
+- YARN已经结束了AM的容器。当AM使用过多的内存或其他资源超出了YARN的限制时，就会发生这种情况。在这种情况下，主机上的节点管理日志中会保存错误信息。
 
-- The operating system has shut down the JVM of the AM. This can happen if the
-YARN configuration is wrong and more memory than physically available is
-configured. Execute `dmesg` on the machine where the AM was running to see if
-this happened. You see messages from Linux' [OOM killer](http://linux-mm.org/OOM_Killer).
+- T	操作系统关闭AM的JVM。如果YARN配置错误并且配置超过物理内存，就会发生这种情况。在AM运行的机器上执行dmesg可以查看是否发生这种情况。您可以从Linux的[OOM killer](http://linux-mm.org/OOM_Killer).
 
-### My YARN containers are killed because they use too much memory
+###  YARN容器由于消耗太多内存而被kill
 
-This is usually indicated my a log message like the following one:
+通常会显示类似下面的一个log信息：
 
 ~~~
 Container container_e05_1467433388200_0136_01_000002 is completed with diagnostics: Container [pid=5832,containerID=container_e05_1467433388200_0136_01_000002] is running beyond physical memory limits. Current usage: 2.3 GB of 2 GB physical memory used; 6.1 GB of 4.2 GB virtual memory used. Killing container.
 ~~~
 
-In that case, the JVM process grew too large. Because the Java heap size is always limited, the extra memory typically comes from non-heap sources:
+这种情况下，JVM进程太大。由于Java堆大小固定，额外内存来自于非堆源：
 
-  - Libraries that use off-heap memory. (Flink's own off-heap memory is limited and taken into account when calculating the allowed heap size.)
-  - PermGen space (strings and classes), code caches, memory mapped jar files
-  - Native libraries (RocksDB)
+  - 使用非堆内存的库。（Flink自身的堆外内存是有限的，并在计算堆允许大小时考虑在内）
+  - PermGen空间（字符串和类）、代码缓存、内存映射jar文件。
+  - 本地库(RocksDB)
 
 You can activate the [memory debug logger](https://ci.apache.org/projects/flink/flink-docs-release-1.0/setup/config.html#memory-and-performance-debugging) to get more insight into what memory pool is actually using up too much memory.
 
 
-### The YARN session crashes with a HDFS permission exception during startup
+### 启动过程中HDFS许可异常引起的YARN会话崩溃
 
-While starting the YARN session, you are receiving an exception like this:
+在开始YARN会话时，您会收到这样的异常：
 
 ~~~
 Exception in thread "main" org.apache.hadoop.security.AccessControlException: Permission denied: user=robert, access=WRITE, inode="/user/robert":hdfs:supergroup:drwxr-xr-x
@@ -408,43 +304,32 @@ Exception in thread "main" org.apache.hadoop.security.AccessControlException: Pe
   at org.apache.flinkyarn.Client.run(Client.java:362)
   at org.apache.flinkyarn.Client.main(Client.java:568)
 ~~~
+出现这种错误的原因是，**in HDFS**中用户的主目录权限错误。用户(这个例子中的`robert`）不能在主目录下创建子目录。
 
-The reason for this error is, that the home directory of the user **in HDFS**
-has the wrong permissions. The user (in this case `robert`) can not create
-directories in his own home directory.
-
-Flink creates a `.flink/` directory in the users home directory
-where it stores the Flink jar and configuration file.
+Flink在用户主目录中创建一个`.flink/`目录，其中存储Flink jar和配置文件。
 
 
-### My job is not reacting to a job cancellation?
+### 我的作业取消为什么没有反应?
 
-Flink is canceling a job by calling the `cancel()` method on all user tasks. Ideally,
-the tasks properly react to the call and stop what they are currently doing, so that 
-all threads can shut down.
+Flink通过在所有用户任务上调用 `cancel()`方法来取消作业。理想情况下，任务对调用进行正确的响应，停止当前运行，这样所有线程都将关闭。
 
-If the tasks are not reacting for a certain amount of time, Flink will start interrupting
-the thread periodically.
+如果任务在一定的时间内没有反应，Flink将会周期性地中断线程。
 
-The TaskManager logs will also contain the current stack of the method where the user 
-code is blocked. 
+TaskManager日志还包含用户代码被阻塞时调用方法的堆栈。
 
+## 产品特点
 
-## Features
+### Flink提供什么样的容错系统?
 
-### What kind of fault-tolerance does Flink provide?
+对于流式计算来说，Flink采用新方法来绘制流数据状态的周期性快照，并使用它们进行恢复。这种机制高效灵活。 参阅 [streaming fault tolerance]({{ site.docs-snapshot }}/internals/stream_checkpointing.html) 获得更多细节。
 
-For streaming programs Flink has a novel approach to draw periodic snapshots of the streaming dataflow state and use those for recovery.
-This mechanism is both efficient and flexible. See the documentation on [streaming fault tolerance]({{ site.docs-snapshot }}/internals/stream_checkpointing.html) for details.
+对于批量计算，Flink会记住程序的转换序列，并可以重启失败的作业。
 
-For batch processing programs Flink remembers the program's sequence of transformations and can restart failed jobs.
+### Flink是否支持Hadoop式计数器和分布式缓存？
 
+[Flink的存储池]({{ site.docs-snapshot }}/apis/programming_guide.html#accumulators--counters) 和
+Hadoop的计算器相比工作很类似, 但比后者更为强大.
 
-### Are Hadoop-like utilities, such as Counters and the DistributedCache supported?
+Flink 的[分布式缓存](https://github.com/apache/flink/tree/master/flink-core/src/main/java/org/apache/flink/api/common/cache/DistributedCache.java) 可以与API深度集成。 请查阅 [JavaDocs](https://github.com/apache/flink/tree/master/flink-java/src/main/java/org/apache/flink/api/java/ExecutionEnvironment.java#L831) 获取更多关于应用的细节来了解如何使用它。
 
-[Flink's Accumulators]({{ site.docs-snapshot }}/apis/programming_guide.html#accumulators--counters) work very similar like
-Hadoop's counters, but are more powerful.
-
-Flink has a [Distributed Cache](https://github.com/apache/flink/tree/master/flink-core/src/main/java/org/apache/flink/api/common/cache/DistributedCache.java) that is deeply integrated with the APIs. Please refer to the [JavaDocs](https://github.com/apache/flink/tree/master/flink-java/src/main/java/org/apache/flink/api/java/ExecutionEnvironment.java#L831) for details on how to use it.
-
-In order to make data sets available on all tasks, we encourage you to use [Broadcast Variables]({{ site.docs-snapshot }}/apis/programming_guide.html#broadcast-variables) instead. They are more efficient and easier to use than the distributed cache.
+为了使数据集在所有任务上可用，我们鼓励您使用 [Broadcast Variables]({{ site.docs-snapshot }}/apis/programming_guide.html#broadcast-variables) instead. 它们比分布式缓存更高效、简单。
