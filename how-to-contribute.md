@@ -1,138 +1,90 @@
----
-title: "How To Contribute"
----
-Apache Flink is developed by an open and friendly community. Everybody is cordially welcome to join the community and contribute to Apache Flink. There are several ways to interact with the community and to contribute to Flink including asking questions, filing bug reports, proposing new features, joining discussions on the mailing lists, contributing code or documentation, improving the website, or testing release candidates.
+# 如何贡献
+Apache Flink的社区非常开放和友好。欢迎大家加入Flink社区并为Apache Flink做贡献。与社区互动，并未Flink做贡献，包括提问，提交错误报告，提出新功能，加入邮件列表进行讨论，贡献代码或文档，改进网站，或称为发布候选人，有以下几种方式：
 
-{% toc %}
+[TOC]
 
-## Ask questions!
+## 提问
+Apache Flink社区非常希望帮助到你，并回答你的问题。您可以加入我们的[用户邮件组](http://flink-china.org/community.html#mailing-lists)，(加入IRC Channel](http://flink-china.org/community.html#irc)，或者在Stack Overflow上关注[apache-flink](https://stackoverflow.com/questions/tagged/apache-flink)标签。
 
-The Apache Flink community is eager to help and to answer your questions. We have a [user mailing list]({{ site.baseurl }}/community.html#mailing-lists ), hang out in an [IRC channel]({{ site.baseurl }}/community.html#irc), and watch Stack Overflow on the [[apache-flink]](http://stackoverflow.com/questions/tagged/apache-flink) tag.
+## 提交缺陷报告
+如果你遇到了Flink相关的问题，请打开Flink的JIRA，点击上方蓝色‘创建按钮’，提交缺陷报告。请在缺陷报告中填写问题的详细信息，如果可能的话，请添加重现问题的描述。非常感谢。
 
------
+## 提交改进或新功能
+社区一直在努力寻找能够完善Apache Flink的反馈。如果你有能够提高Flink的新想法或者能够使Flink用户受益的新功能，请在[Flink JIRA](https://issues.apache.org/jira/projects/FLINK/issues)中提交问题。请尽量详细的描述这个新功能，包括其依赖及范围。详细信息非常重要，因为：
+它能保证在开发新功能的过程中，所有前置条件都能满足。
+它能帮助我们评估实现你需求的所需的人力及方案。
+它能够激发关于此问题的建设性的讨论。
+如果你打算自己实现这个新功能或新改进，也需要尽量详细的信息，同时请读一下[贡献代码](http://flink-china.org/contribute-code.html)规范。
 
-## File a bug report
+我们建议你再动手写代码之前，先在社区讨论是否需要这个新功能以及如何实现新功能，并在社区就此问题达成一致。一些功能可能会超过Flink项目的范围，最好尽早讨论。
 
-Please let us know if you experienced a problem with Flink and file a bug report. Open [Flink's JIRA](http://issues.apache.org/jira/browse/FLINK) and click on the blue **Create** button at the top. Please give detailed information about the problem you encountered and, if possible, add a description that helps to reproduce the problem. Thank you very much.
+对一些会改动Flink基础的大功能，我们有另一个渠道：[Flink改进建议](https://cwiki.apache.org/confluence/display/FLINK/Flink+Improvement+Proposals)。如果感兴趣的话，你可以在那里提一个新功能或者关注一些已有的讨论。
 
------
+## 帮助他人并加入讨论
+大多数Apache Flink社区的问题都在以下两个邮件组中进行讨论：
+* 用户邮件组user@flink.apache.org：用户在该邮件组中提问，并寻求帮助或建议。加入用户邮件组来帮助他人，是非常好的贡献Flink社区的方式。同时，在Stack Overflow上，有[apache-flink](https://stackoverflow.com/questions/tagged/apache-flink)标签，你可以在那里帮助其他Flink用户并且收获一些知识。
+* 开发邮件组dev@flink.apache.org：Flink开发人员使用该邮件组来交换想法，讨论新功能，发布以及整体开发进度。如果你想为Flink贡献代码，可以加入这个邮件组。
 
-## Propose an improvement or a new feature
+非常欢迎用户加入这两个[邮件组](http://flink-china.org/community.html#mailing-lists)。除了用户邮件组，你还可以加入[Flink IRC Channel](https://flink.apache.org/community.html#irc)来跟其他用户或贡献者交流问题。
 
-Our community is constantly looking for feedback to improve Apache Flink. If you have an idea how to improve Flink or have a new feature in mind that would be beneficial for Flink users, please open an issue in [Flink's JIRA](http://issues.apache.org/jira/browse/FLINK). The improvement or new feature should be described in appropriate detail and include the scope and its requirements if possible. Detailed information is important for a few reasons:
+## 测试待发布版本
 
-- It ensures your requirements are met when the improvement or feature is implemented.
-- It helps to estimate the effort and to design a solution that addresses your needs.
-- It allow for constructive discussions that might arise around this issue.
+由于社区的积极推动，Apache Flink一直在持续改进。每隔几周，我们会发布一个包含缺陷修复，功能改进和新功能的版本。发发布新版本包括以下几个步骤：
+1. 选择一个待发布版本并进行投票（投票通常会持续72小时）
+2. 测试待发布版本并且投票（如果发布包没有问题，就+1，如果有问题，就-1）
+3. 如果待发布版本有问题，我们就回到第一步，如果没有问题，就发布该版本
+我们的wiki中，有一页专门介绍了[待发布版本的测试流程](https://cwiki.apache.org/confluence/display/FLINK/Releasing)。如果参与发布的人很少，那么发布测试就会是一项很繁重的工作。但是其实可以有更多的人加入到版本测试过程中。Flink社区鼓励大家积极参与版本发布的测试工作。通过测试发布版本，你也可以保证Flink下个发布版本在你的环境可以正常运行，同时可以帮助提高发布质量。
 
-Detailed information is also required, if you plan to contribute the improvement or feature you proposed yourself. Please read the [Contribute code]({{ site.base }}/contribute-code.html) guide in this case as well.
+## 贡献代码
+志愿者贡献的代码在不断维护，改进和拓展Apache Flink的技术能力。Apache Flink社区鼓励大家都来贡献源代码。为了保证代码贡献者有愉快的贡献体验，同时保证高质量的代码库，我们在[代码贡献指南](http://flink-china.org/contribute-code.html)中拟定了一份代码贡献流程。指南中也包括了如何设置开发环境，编码规范和代码风格，同时也解释了如何提交代码。
 
+**请在贡献代码前，先读[代码贡献指南]。(http://flink-china.org/contribute-code.html)**
+也请读一下本章提交贡献者许可证协议部分。
 
-We recommend to first reach consensus with the community on whether a new feature is required and how to implement a new feature, before starting with the implementation. Some features might be out of scope of the project, and it's best to discover this early.
+#### 寻找待解决问题?
+我们在[Flink's JIRA](https://issues.apache.org/jira/projects/FLINK/issues)中维护了一份已知问题，改进建议和功能建议的列表。对于那些适合新贡献者解决的问题，都标上了'starter'标签。这些任务解决起来都非常简单，并且能够帮助你熟悉项目和贡献流程。
 
-For very big features that change Flink in a fundamental way we have another process in place:
-[Flink Improvement Proposals](https://cwiki.apache.org/confluence/display/FLINK/Flink+Improvement+Proposals). If you are interested you can propose a new feature there or follow the
-discussions on existing proposals.
+如果你在寻找适合解决的问题，请关注[初学者问题列表](https://issues.apache.org/jira/issues/?jql=project%20%3D%20FLINK%20AND%20resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20starter%20ORDER%20BY%20priority%20DESC)。当然你也可以选择解决[其他问题](https://issues.apache.org/jira/issues/?jql=project%20%3D%20FLINK%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC)。对于你有兴趣解决的问题，可以随时提问。
 
------
+## 贡献文档
+对于任何软件，好的文档都是非常重要的。对Apache Flink这种复杂的分布式数据处理引擎来说，更是如此。Apache Flink社区致力于提供简洁清晰完整的文档，并且欢迎大家以各种形式为Apache Flink贡献文档。
 
-## Help others and join the discussions
+* 对于缺失，错误或者过时的文档，请提交[JARA issue](https://issues.apache.org/jira/projects/FLINK/issues/FLINK-8955?filter=allopenissues)
+* Flink文档以Markdown形式写成。在[Flink源代码库](http://flink-china.org/community.html#main-source-repositories)的docs目录。关于如何更新、改进以及贡献文档，请参阅[贡献文档指南](http://flink-china.org/contribute-documentation.html)获得更详细的信息。
 
-Most communication in the Apache Flink community happens on two mailing lists:
+## 改进网页
 
-- The user mailing lists `user@flink.apache.org` is the place where users of Apache Flink ask questions and seek for help or advice. Joining the user list and helping other users is a very good way to contribute to Flink's community. Furthermore, there is the [[apache-flink]](http://stackoverflow.com/questions/tagged/apache-flink) tag on Stack Overflow if you'd like to help Flink users (and harvest some points) there.
-- The development mailing list `dev@flink.apache.org` is the place where Flink developers exchange ideas and discuss new features, upcoming releases, and the development process in general. If you are interested in contributing code to Flink, you should join this mailing list.
+Apache Flink的网站代表了Apache Flink及其整个社区。网页有几个用途，包括：
+* Apache Flink以及其功能说明
+* 鼓励访问者下载并使用Flink
+* 鼓励访问者与投入社区建设
 
-You are very welcome to [subscribe to both mailing lists]({{ site.baseurl }}/community.html#mailing-lists). In addition to the user list, there is also a [Flink IRC]({{ site.baseurl }}/community.html#irc) channel that you can join to talk to other users and contributors.
+我们欢迎任何改进网站的行为。
+* 如果你认为网站可以更好，请开一个[JIRA issue](issues.apache.org/jira/browse/FLINK)
+* 如果你想更新或改进网站，请遵守[网站改进指南](https://flink.apache.org/improve-website.html)
 
------
+## 更多贡献方式...
+还有很多其他的贡献Flink社区的方式。例如，你可以
+* 做一个关于Flink的演讲，告诉其他人你是怎么用Flink的
+* 组织线下交流会或用户组
+* 跟其他人讨论Flink
+等等
 
-## Test a release candidate
+## 提交贡献者许可协
+如果你想贡献Flink，请向Apache软件基金会(ASF)提交贡献者许可协议。以下引用摘http://www.apache.org/licenses ,介绍了ICLA和CCLA，以及他们的作用。
 
-Apache Flink is continuously improved by its active community. Every few weeks, we release a new version of Apache Flink with bug fixes, improvements, and new features. The process of releasing a new version consists of the following steps:
+> ASF
+ASF希望所有为Apache项目贡献想法、代码或文档的贡献者，都通过邮件，信件或传真，签名并提交[个人贡献者许可协议](http://www.apache.org/licenses/icla.txt)（CLA）。该协议中清楚的定义了知识产权相关条目已经被捐献给了ASF。因此未来如果有对该软件法律上的争议，ASF会使用该部分知识产权相关条目。
+如果公司允许其员工参与Apache项目，公司可以通过[公司贡献者许可协议](http://www.apache.org/licenses/cla-corporate.txt)来捐赠相关的只是产权，改部分内容应该已经包括在了员工雇佣合同的内容中。注意：公司贡献者许可协议与个人贡献者许可协议并不冲突，员工仍需要签署CLA来捐赠不包含在CCLA内容中的知识产权条目。
 
-1. Building a new release candidate and starting a vote (usually for 72 hours).
-2. Testing the release candidate and voting (`+1` if no issues were found, `-1` if the release candidate has issues).
-3. Going back to step 1 if the release candidate had issues otherwise we publish the release.
+## 如何成为代码提交者
+提交者是拥有项目代码库写权限的人。比如，他们可以更改代码，文档和网站，也可以接受别人的贡献。
+关于如何成为提交者，并没有很严格的约定。新提交者的候选人一般都是社区中比较活跃的贡献者。
 
-Our wiki contains a page that summarizes the [test procedure for a release](https://cwiki.apache.org/confluence/display/FLINK/Releasing). Release testing is a big effort if done by a small group of people but can be easily scaled out to more people. The Flink community encourages everybody to participate in the testing of a release candidate. By testing a release candidate, you can ensure that the next Flink release is working properly for your setup and help to improve the quality of releases.
+成为社区活跃用户，意味着你需要参与到邮件组的讨论中，能够回答问题，测试发布版本，尊重他人，并且遵守社区任人唯贤的原则。“Apache方式”聚焦社区建设，这对社区建设是非常重要的。
 
------
+当然，对社区贡献代码和文档也非常重要。非常好的融入方式是贡献改进建议，新功能以及修复缺陷。你需要对你贡献的代码负责，增加测试及文档，并帮助共同维护相关代码。
 
-## Contribute code
+新提交者候选人通常由当前提交者或者PMC成员提名，并在内部投票产生。
 
-Apache Flink is maintained, improved, and extended by code contributions of volunteers. The Apache Flink community encourages anybody to contribute source code. In order to ensure a pleasant contribution experience for contributors and reviewers and to preserve the high quality of the code base, we follow a contribution process that is explained in our [Contribute code]( {{ site.base }}/contribute-code.html) guide. The guide does also include instructions to setup a development environment, our coding guidelines and code style, and explains how to submit a code contribution.
-
-**Please read the [Contribute code]( {{ site.base }}/contribute-code.html) guide before you start to work on a code contribution.**
-
-Please do also read the [Submit a Contributor License Agreement]({{ site.baseurl }}/how-to-contribute.html#submit-a-contributor-license-agreement) Section.
-
-### Looking for an issue to work on?
-{:.no_toc}
-
-We maintain a list of all known bugs, proposed improvements and suggested features in [Flink's JIRA](https://issues.apache.org/jira/browse/FLINK/?selectedTab=com.atlassian.jira.jira-projects-plugin:issues-panel). Issues that we believe are good tasks for new contributors are tagged with a special "starter" tag. Those tasks are supposed to be rather easy to solve and will help you to become familiar with the project and the contribution process.
-
-Please have a look at the list of [starter issues](https://issues.apache.org/jira/issues/?jql=project%20%3D%20FLINK%20AND%20resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20starter%20ORDER%20BY%20priority%20DESC), if you are looking for an issue to work on. You can of course also choose [any other issue](https://issues.apache.org/jira/issues/?jql=project%20%3D%20FLINK%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC) to work on. Feel free to ask questions about issues that you would be interested in working on.
-
------
-
-## Contribute documentation
-
-Good documentation is crucial for any kind of software. This is especially true for sophisticated software systems such as distributed data processing engines like Apache Flink. The Apache Flink community aims to provide concise, precise, and complete documentation and welcomes any contribution to improve Apache Flink's documentation.
-
-- Please report missing, incorrect, or out-dated documentation as a [JIRA issue](http://issues.apache.org/jira/browse/FLINK).
-- Flink's documentation is written in Markdown and located in the `docs` folder in [Flink's source code repository]({{ site.baseurl }}/community.html#main-source-repositories). See the [Contribute documentation]({{ site.base }}/contribute-documentation.html) guidelines for detailed instructions for how to update and improve the documentation and to contribute your changes.
-
------
-
-## Improve the website
-
-The [Apache Flink website](http://flink.apache.org) presents Apache Flink and its community. It serves several purposes including:
-
-- Informing visitors about Apache Flink and its features.
-- Encouraging visitors to download and use Flink.
-- Encouraging visitors to engage with the community.
-
-We welcome any contribution to improve our website.
-
-- Please open a [JIRA issue](http://issues.apache.org/jira/browse/FLINK) if you think our website could be improved.
-- Please follow the [Improve the website]({{ site.baseurl }}/improve-website.html) guidelines if you would like to update and improve the website.
-
------
-
-## More ways to contribute...
-
-There are many more ways to contribute to the Flink community. For example you can
-
-- give a talk about Flink and tell others how you use it.
-- organize a local Meetup or user group.
-- talk to people about Flink.
-- ...
-
------
-
-## Submit a Contributor License Agreement
-
-Please submit a contributor license agreement to the Apache Software Foundation (ASF) if you would like to contribute to Apache Flink. The following quote from [http://www.apache.org/licenses](http://www.apache.org/licenses/#clas) gives more information about the ICLA and CCLA and why they are necessary.
-
-> The ASF desires that all contributors of ideas, code, or documentation to the Apache projects complete, sign, and submit (via postal mail, fax or email) an [Individual Contributor License Agreement](http://www.apache.org/licenses/icla.txt) (CLA) [ [PDF form](http://www.apache.org/licenses/icla.pdf) ]. The purpose of this agreement is to clearly define the terms under which intellectual property has been contributed to the ASF and thereby allow us to defend the project should there be a legal dispute regarding the software at some future time. A signed CLA is required to be on file before an individual is given commit rights to an ASF project.
->
-> For a corporation that has assigned employees to work on an Apache project, a [Corporate CLA](http://www.apache.org/licenses/cla-corporate.txt) (CCLA) is available for contributing intellectual property via the corporation, that may have been assigned as part of an employment agreement. Note that a Corporate CLA does not remove the need for every developer to sign their own CLA as an individual, to cover any of their contributions which are not owned by the corporation signing the CCLA.
->
->  ...
-
------
-
-## How to become a committer
-
-Committers are community members that have write access to the project's repositories, i.e., they can modify the code, documentation, and website by themselves and also accept other contributions.
-
-There is no strict protocol for becoming a committer. Candidates for new committers are typically people that are active contributors and community members.
-
-Being an active community member means participating on mailing list discussions, helping to answer questions, verifying release candidates, being respectful towards others, and following the meritocratic principles of community management. Since the "Apache Way" has a strong focus on the project community, this part is *very* important.
-
-Of course, contributing code and documentation to the project is important as well. A good way to start is contributing improvements, new features, or bug fixes. You need to show that you take responsibility for the code that you contribute, add tests and documentation, and help maintaining it.
-
-Candidates for new committers are suggested by current committers or PMC members, and voted upon by the PMC.
-
-If you would like to become a committer, you should engage with the community and start contributing to Apache Flink in any of the above ways. You might also want to talk to other committers and ask for their advice and guidance.
+如果你想成为提交者，你需积极参加社区活动，并开始按照以上方式为Apache Flink做贡献。你也可以与其他提交者讨论或者寻求他们的建议和指导。
