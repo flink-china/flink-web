@@ -37,7 +37,7 @@
             <li{% if page.url == '/ecosystem.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/ecosystem.html">生态系统</a></li>
 
             <!-- Community -->
-            <li{% if page.url == '/community.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/community.html">社区 &amp; 项目</a></li>
+            <li{% if page.url == '/community.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/community.html">社区和项目</a></li>
 
             <!-- Contribute -->
             <li{% if page.url == '/how-to-contribute.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/how-to-contribute.html">如何贡献</a></li>
@@ -65,9 +65,11 @@
             <li>
               <a href="{{ site.docs-stable }}/quickstart/setup_quickstart.html" target="_blank">快速起步 <small><span class="glyphicon glyphicon-new-window"></span></small></a>
             </li>
+            <!--Flink学院暂时注释掉
+              <li{% if page.url == '/school.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/school.html">Flink学院</a></li>
 
-          </ul>
-
+              <li{% if page.url == '/active.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/active.html">Flink China社区活动</a></li>
+           </li> -->
 
 
           <ul class="nav navbar-nav navbar-bottom">
@@ -77,8 +79,6 @@
             <li {% if page.url == '/faq.html' %} class="hidden-sm active"{% endif %}><a href="{{ site.baseurl }}/faq.html">常见问题</a></li>
 
 
-            <!-- Visualizer -->
-            <li class="{% if page.url contains '/visualizer/' %} active{% endif %} hidden-md hidden-sm"><a href="{{ site.baseurl }}/visualizer/" target="_blank">Plan Visualizer <small><span class="glyphicon glyphicon-new-window"></span></small></a></li>
 
           </ul>
         </div><!-- /.navbar-collapse -->

@@ -7,25 +7,25 @@ Apache Flink的社区非常开放和友好。欢迎大家加入Flink社区并为
 
 ## 提问
 
-Apache Flink社区非常希望帮助到你，并回答你的问题。您可以加入我们的[用户邮件组](http://flink-china.org/community.html#mailing-lists)，(加入IRC Channel](http://flink-china.org/community.html#irc)，或者在Stack Overflow上关注[apache-flink](https://stackoverflow.com/questions/tagged/apache-flink)标签。
+Apache Flink社区非常希望帮助到您，并回答你的问题。您可以加入我们的[用户邮件组](http://flink-china.org/community.html#mailing-lists)，[加入IRC Channel](http://flink-china.org/community.html#irc)，或者在Stack Overflow上关注[apache-flink](https://stackoverflow.com/questions/tagged/apache-flink)标签。
 
 -----
 
 ## 提交缺陷报告
 
-如果你遇到了Flink相关的问题，请打开Flink的JIRA，点击上方蓝色‘创建按钮’，提交缺陷报告。请在缺陷报告中填写问题的详细信息，如果可能的话，请添加重现问题的描述。非常感谢。
+如果您遇到了Flink相关的问题，请打开Flink的JIRA，点击上方蓝色‘创建按钮’，提交缺陷报告。请在缺陷报告中填写问题的详细信息，如果可能的话，请添加重现问题的描述。非常感谢。
 
 -----
 
 ## 提出改进或者新功能
 
-社区一直在努力寻找能够完善Apache Flink的反馈。如果你有能够提高Flink的新想法或者能够使Flink用户受益的新功能，请在[Flink JIRA](https://issues.apache.org/jira/projects/FLINK/issues)中提交问题。请尽量详细的描述这个新功能，包括其依赖及范围。详细信息非常重要，因为：
+社区一直在努力寻找能够完善Apache Flink的反馈。如果您有能够提高Flink的新想法或者能够使Flink用户受益的新功能，请在[Flink JIRA](https://issues.apache.org/jira/projects/FLINK/issues)中提交问题。请尽量详细的描述这个新功能，包括其依赖及范围。详细信息非常重要，因为：
 
-它能保证在开发新功能的过程中，所有前置条件都能满足。
+- 它能保证在开发新功能的过程中，所有前置条件都能满足。
 
-它能帮助我们评估实现你需求的所需的人力及方案。
+- 它能帮助我们评估实现你需求的所需的人力及方案。
 
-它能够激发关于此问题的建设性的讨论。
+- 它能够激发关于此问题的建设性的讨论。
 
 如果你打算自己实现这个新功能或新改进，也需要尽量详细的信息，同时请读一下[贡献代码](http://flink-china.org/contribute-code.html)规范。
 
@@ -66,7 +66,7 @@ Apache Flink社区非常希望帮助到你，并回答你的问题。您可以�
 
 志愿者贡献的代码在不断维护，改进和拓展Apache Flink的技术能力。Apache Flink社区鼓励大家都来贡献源代码。为了保证代码贡献者有愉快的贡献体验，同时保证高质量的代码库，我们在[代码贡献指南](http://flink-china.org/contribute-code.html)中拟定了一份代码贡献流程。指南中也包括了如何设置开发环境，编码规范和代码风格，同时也解释了如何提交代码。
 
-**请在贡献代码前，先读[代码贡献指南]。(http://flink-china.org/contribute-code.html)**
+请在贡献代码前，先读**[代码贡献指南](http://flink-china.org/contribute-code.html)**
 也请读一下本章提交贡献者许可证协议部分。
 
 ### 寻找待解决问题?
@@ -82,7 +82,7 @@ Apache Flink社区非常希望帮助到你，并回答你的问题。您可以�
 
 对于任何软件，好的文档都是非常重要的。对Apache Flink这种复杂的分布式数据处理引擎来说，更是如此。Apache Flink社区致力于提供简洁清晰完整的文档，并且欢迎大家以各种形式为Apache Flink贡献文档。
 
-* 对于缺失，错误或者过时的文档，请提交[JARA issue](https://issues.apache.org/jira/projects/FLINK/issues/FLINK-8955?filter=allopenissues)
+* 对于缺失，错误或者过时的文档，请提交[JARA issue](https://issues.apache.org/jira/projects/FLINK/issues/FLINK-8955?filter=allopenissues)。
 
 * Flink文档以Markdown形式写成。在[Flink源代码库](http://flink-china.org/community.html#main-source-repositories)的docs目录。关于如何更新、改进以及贡献文档，请参阅[贡献文档指南](http://flink-china.org/contribute-documentation.html)获得更详细的信息。
 

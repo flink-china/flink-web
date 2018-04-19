@@ -34,24 +34,24 @@ Apache Flink支持广泛的生态系统，并可与其无缝对接许多其他�
 Flink社区收集这些软件包的链接，但不保留它们。
 因此，他们不属于Apache Flink项目，社区不能给予他们任何支持。
 **你的项目丢失了么?**
-请在 [用户/开发邮件列表]（#邮件列表）告知我们。
+请在 [user/dev mailing list](#mailing-lists)告知我们。
 
 **Apache Zeppelin**
 
 [Apache Zeppelin](https://zeppelin.incubator.apache.org/) 是一款基于Web的notebook开发工具，支持交互式数据分析，
-[Flink as an execution engine](https://zeppelin.incubator.apache.org/docs/interpreter/flink.html) (next to others engines).
+[Flink as an execution engine](https://zeppelin.incubator.apache.org/docs/interpreter/flink.html) (next to others engines)。
 详情请参阅 Jim Dowling的 [Flink Forward 话题](http://www.slideshare.net/FlinkForward/jim-dowling-interactive-flink-analytics-with-hopsworks-and-zeppelin) 关于 在Flink运行Zeppelin.
 
 **Apache Mahout**
 
 [Apache Mahout](https://mahout.apache.org/) 是在机器学习库中使用，Flink将他收录为底层执行引擎。
-详情请参阅 Schelter的 [Flink Forward 话题](http://www.slideshare.net/FlinkForward/sebastian-schelter-distributed-machine-learing-with-the-samsara-dsl) 关于 Mahout-Samsara DSL.
+详情请参阅 Schelter的 [Flink Forward 话题](http://www.slideshare.net/FlinkForward/sebastian-schelter-distributed-machine-learing-with-the-samsara-dsl) 关于 Mahout-Samsara DSL。
 
 **Cascading**
 
 [Cascading](http://www.cascading.org/cascading-flink/) 级联使用户能够轻松地在Flink和其他执行引擎上构建复杂的工作流程。
-[Cascading on Flink](https://github.com/dataArtisans/cascading-flink)是建设在 [dataArtisans](http://data-artisans.com/) 和[Driven, Inc](http://www.driven.io/).
-详情请参阅Fabian Hueske的[Flink Forward 话题](http://www.slideshare.net/FlinkForward/fabian-hueske-training-cascading-on-flink) for more details.
+[Cascading on Flink](https://github.com/dataArtisans/cascading-flink)是建设在 [dataArtisans](http://data-artisans.com/) 和[Driven, Inc](http://www.driven.io/)。
+详情请参阅Fabian Hueske的[Flink Forward 话题](http://www.slideshare.net/FlinkForward/fabian-hueske-training-cascading-on-flink) for more details。
 
 **Apache Beam (incubating)**
 
@@ -60,12 +60,12 @@ Flink社区收集这些软件包的链接，但不保留它们。
 
 **GRADOOP**
 
-[GRADOOP](http://dbs.uni-leipzig.de/en/research/projects/gradoop) 在Flink之上实现可扩展的图形分析，是由莱比锡大学开发。 更多详情请查看 [Martin Junghanns’ Flink Forward talk](http://www.slideshare.net/FlinkForward/martin-junghans-gradoop-scalable-graph-analytics-with-apache-flink).
+[GRADOOP](http://dbs.uni-leipzig.de/en/research/projects/gradoop) 在Flink之上实现可扩展的图形分析，是由莱比锡大学开发。 更多详情请查看 [Martin Junghanns’ Flink Forward talk](http://www.slideshare.net/FlinkForward/martin-junghans-gradoop-scalable-graph-analytics-with-apache-flink)。
 
 **BigPetStore**
 
 [BigPetStore](https://github.com/apache/bigtop/tree/master/bigtop-bigpetstore) 是一个包含数据生成器的基准测试套件，Flink将它收入其中。 详情请参阅
-See Suneel Marthi的[Flink Forward talk](http://www.slideshare.net/FlinkForward/suneel-marthi-bigpetstore-flink-a-comprehensive-blueprint-for-apache-flink?ref=http://flink-forward.org/?session=tbd-3)预览 .
+See Suneel Marthi的[Flink Forward talk](http://www.slideshare.net/FlinkForward/suneel-marthi-bigpetstore-flink-a-comprehensive-blueprint-for-apache-flink?ref=http://flink-forward.org/?session=tbd-3)预览 。
 
 **FastR**
 
@@ -73,7 +73,7 @@ See Suneel Marthi的[Flink Forward talk](http://www.slideshare.net/FlinkForward/
 
 **Apache SAMOA**
 
-[Apache SAMOA (incubating)](https://samoa.incubator.apache.org/) 即将推出一款基于Flink为特色的流媒体ML库。 Albert Bifet 介绍了如何运行 Flink在 SAMOA，请参阅他的 [Flink Forward talk](http://www.slideshare.net/FlinkForward/albert-bifet-apache-samoa-mining-big-data-streams-with-apache-flink?ref=http://flink-forward.org/?session=apache-samoa-mining-big-data-streams-with-apache-flink).
+[Apache SAMOA (incubating)](https://samoa.incubator.apache.org/) 即将推出一款基于Flink为特色的流媒体ML库。 Albert Bifet 介绍了如何运行 Flink在 SAMOA，请参阅他的 [Flink Forward talk](http://www.slideshare.net/FlinkForward/albert-bifet-apache-samoa-mining-big-data-streams-with-apache-flink?ref=http://flink-forward.org/?session=apache-samoa-mining-big-data-streams-with-apache-flink)。
 
 **Python Examples on Flink**
 
