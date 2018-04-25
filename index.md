@@ -32,7 +32,7 @@ layout: base
 
 
   <hr />
-    <h2><a href="{{ site.baseurl }}/poweredby.html">Powered by Flink</a></h2>
+    <h2><a href="{{ site.baseurl }}/poweredby.html">由Flink提供支持</a></h2>
 
 
 
