@@ -8,7 +8,7 @@ title:  "Flink China翻译团队"
 
 FCTT是Flink China（http://flink-china.org/）的官方翻译团队，负责从[Apache Flink](https://flink.apache.org/)官网、[data-artisans](https://data-artisans.com/)等国外权威网站、媒体翻译Flink相关的技术、文档、博客、资讯等内容。
 
-## FCTT工作环节
+## FCTT工作内容
 
 - 选题，负责选择合适的内容，并将原文转换为 markdown 格式，提交到 FCTT 的[TranslateProject](https://github.com/flink-china/flink-web) 库中。
 - 译者，负责从选题中选择内容进行翻译。
