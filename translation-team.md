@@ -54,7 +54,7 @@ FCTT是Flink China（http://flink-china.org/）的官方翻译团队，负责从
 
 我们非常欢迎有兴趣的同学参与一起翻译和优化中文文档。欢迎译者与校对的加入。我们会在感谢页面感谢所有参与了贡献的人。如有遗漏，请联系我们！
 
-翻译前请先阅读 [如何成为我们的成员](https://github.com/flink-china/flink-web/wiki/1.-%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E6%88%91%E4%BB%AC%E7%9A%84%E6%88%90%E5%91%98) 如何开始。
+翻译前请先阅读 [如何成为我们的成员](https://github.com/flink-china/Flink-China-Translate-Team-/wiki/1.-%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E6%88%91%E4%BB%AC%E7%9A%84%E6%88%90%E5%91%98) 如何开始。
 
 ## 申请流程
-请阅读[WIKI](https://github.com/flink-china/flink-web/wiki/%E7%BF%BB%E8%AF%91%E5%B7%A5%E4%BD%9C%E9%A1%BB%E7%9F%A5)。
+请阅读[翻译计划](https://github.com/flink-china/Flink-China-Translate-Team-)。
