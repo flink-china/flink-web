@@ -65,6 +65,9 @@
             <li>
               <a href="{{ site.docs-stable }}/quickstart/setup_quickstart.html" target="_blank">快速起步 <small><span class="glyphicon glyphicon-new-window"></span></small></a>
             </li>
+
+            <li class="{% if page.url contains '/blog/' or page.url contains '/news/' %} active{% endif %} hidden-md hidden-sm"><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+
             <!--Flink学院暂时注释掉
               <li{% if page.url == '/school.html' %} class="active"{% endif %}><a href="{{ site.baseurl }}/school.html">Flink学院</a></li>
 
